@@ -1,25 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import JobCard from "./Components/JobCard";
+import { Container, Title, SimpleGrid, MantineProvider } from "@mantine/core";
+
+interface Job {
+  id: number;
+  title: string;
+  company: string;
+  location: string;
+  experience: string;
+  salary: string;
+}
 
 function App() {
+  const [jobs, setJobs] = useState<Job[]>([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:8080/jobs")
+      .then(res => setJobs(res.data))
+      .catch(err => console.log(err));
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MantineProvider>
+    <Container size="lg" py="xl">
+      <Title order={2} mb="xl" ta="center">
+        🚀 Available Jobs
+      </Title>
+
+      <SimpleGrid
+        cols={{ base: 1, sm: 2, md: 3 }}
+        spacing="lg"
+      >
+        {jobs.map((job, index) => (
+          <JobCard key={job.id} job={job} index={index} />
+        ))}
+      </SimpleGrid>
+    </Container>
+    </MantineProvider>
   );
 }
 

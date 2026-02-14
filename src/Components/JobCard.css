@@ -1,0 +1,41 @@
+.job-card {
+  transition: all 0.3s ease;
+  border-width: 2px !important;
+}
+
+.job-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* Unique Border Colors */
+
+.card-blue {
+  border-color: #228be6 !important;
+  background: linear-gradient(135deg, #e7f5ff, #f8fbff);
+}
+
+.card-green {
+  border-color: #2f9e44 !important;
+  background: linear-gradient(135deg, #ebfbee, #f4fff6);
+}
+
+.card-purple {
+  border-color: #7950f2 !important;
+  background: linear-gradient(135deg, #f3f0ff, #faf8ff);
+}
+
+.card-orange {
+  border-color: #f76707 !important;
+  background: linear-gradient(135deg, #fff4e6, #fffaf3);
+}
+
+.card-pink {
+  border-color: #d6336c !important;
+  background: linear-gradient(135deg, #fff0f6, #fff8fb);
+}
+
+.card-cyan {
+  border-color: #0ca678 !important;
+  background: linear-gradient(135deg, #e6fcf5, #f4fffb);
+}
