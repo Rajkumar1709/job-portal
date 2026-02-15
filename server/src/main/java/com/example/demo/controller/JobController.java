@@ -1,7 +1,10 @@
-package com.example.demo;
+package com.example.demo.controller;
 
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+
+import com.example.demo.entity.Job;
+import com.example.demo.repository.JobRepository;
 
 @RestController
 @RequestMapping("/jobs")

@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -19,4 +19,8 @@ public class Job {
     private String location;
     private String experience;
     private String salary;
+
+    @ManyToOne
+    @JoinColumn(name = "posted_by")
+    private User postedBy;
 }

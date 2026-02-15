@@ -1,0 +1,11 @@
+# frontend
+job-portal/node_modules
+job-portal/dist
+job-portal/.env
+
+# backend
+server/target
+server/.env
+
+# OS
+.DS_Store
